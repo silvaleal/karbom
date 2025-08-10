@@ -1,0 +1,50 @@
+<?php
+
+# CLI feito em php, para tratar banco de dados
+
+switch (count($argv)) {
+    case 1:
+        $cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
+
+        echo "\n";
+        foreach ($cmds as $category => $command) {
+            echo "\033[92m$category\n\033[90m";
+            foreach ($command as $key => $description) {
+                echo " $key => $description\n";
+            }
+        }
+        echo "\n\033[39m";
+        break;
+
+    default:
+        $exploreArgs = explode(":", $argv[1]);
+
+        switch (count($exploreArgs)) {
+            case 1:
+                $cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
+                $category = $argv[1];
+                echo "\n\033[92m$category\n\033[90m";
+                foreach ($cmds[$category] as $key => $description) {
+                    echo " $key => $description\n";
+                }
+                echo "\n\033[39m";
+                break;
+
+            default:
+                $category = $exploreArgs[0];
+                $command = $exploreArgs[1];
+
+                $filePath = __DIR__ . "/silvaleal-core/src/$category/$command.php";
+
+                if (file_exists($filePath)) {
+                    $result = require __DIR__ . "/silvaleal-core/src/$category/$command.php";
+                    echo $result;
+                } else {
+                    echo "Comando não encontrado.";
+                }
+                break;
+        }
+
+
+        break;
+}
