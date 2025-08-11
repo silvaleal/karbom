@@ -2,10 +2,9 @@
 
 # CLI feito em php, para tratar banco de dados
 
+$cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
 switch (count($argv)) {
     case 1:
-        $cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
-
         echo "\n";
         foreach ($cmds as $category => $command) {
             echo "\033[92m$category\n\033[90m";
@@ -21,7 +20,6 @@ switch (count($argv)) {
 
         switch (count($exploreArgs)) {
             case 1:
-                $cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
                 $category = $argv[1];
                 echo "\n\033[92m$category\n\033[90m";
                 foreach ($cmds[$category] as $key => $description) {
