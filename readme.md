@@ -7,7 +7,7 @@ Atenção, este projeto não é um ORM, e sim apenas um atalho para mexer em um 
 ```bash
 php silvaleal # Liste os comandos
 php silvaleal <category> # Liste apenas os comandos de uma categoria
-php silvaleal db:migration # Crie uma migration
+php silvaleal db:migration <name> # Crie uma migration
 php silvaleal db:config # Configure o seu banco de dados
 ```
 

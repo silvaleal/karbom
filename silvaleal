@@ -1,6 +1,6 @@
 <?php
 
-# CLI feito em php, para tratar banco de dados
+# https://github.com/silvaleal/php-cli
 
 $cmds = require __DIR__ . "/cli/src/list-commands.php";
 switch (count($argv)) {
