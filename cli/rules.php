@@ -5,7 +5,7 @@ return [
         "dbHost"=>'localhost',
         "dbUser"=>'root',
         "dbPassword"=>'',
-        "dbName"=>"silvaleal_cli_pdo" # Auto-Created added
+        "dbName"=>"cli" # Coloque o nome da tabela que você for usar.
     ],
     "paths" => [
         "migrations"=>__DIR__."/../app/Migrations/",

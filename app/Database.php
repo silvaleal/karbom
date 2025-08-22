@@ -26,12 +26,12 @@ class Database
             $pdo->exec("CREATE DATABASE $this->database");
             $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->database", $this->user, $this->password);
         }
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this->pdo;
     }
 
     public function connect() {
         $this->prepare();
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this->pdo;
     }
 }

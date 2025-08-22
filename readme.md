@@ -22,5 +22,5 @@ Antes de usar o terminal para configurar o meu banco de dados (método usado no 
     # Pegue a pasta que você instalou e jogue o que está dentro dela na raiz do seu projeto.
 
 # Passo 2.
-    # Acesse a pasta "silvaleal-core" e vá em rules.php, coloque a conexão com seu banco de dados e o caminho que deseja para as migrations
+    # Acesse a pasta "cli" e vá em rules.php, coloque a conexão com seu banco de dados e o caminho que deseja para as migrations
 ```

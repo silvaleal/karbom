@@ -2,7 +2,7 @@
 
 # CLI feito em php, para tratar banco de dados
 
-$cmds = require __DIR__ . "/silvaleal-core/src/list-commands.php";
+$cmds = require __DIR__ . "/cli/src/list-commands.php";
 switch (count($argv)) {
     case 1:
         echo "\n";
@@ -31,18 +31,14 @@ switch (count($argv)) {
             default:
                 $category = $exploreArgs[0];
                 $command = $exploreArgs[1];
-
-                $filePath = __DIR__ . "/silvaleal-core/src/$category/$command.php";
+                $filePath = __DIR__ . "/cli/src/$category/$command.php";
 
                 if (file_exists($filePath)) {
-                    $result = require __DIR__ . "/silvaleal-core/src/$category/$command.php";
-                    echo $result;
+                    $result = require __DIR__ . "/cli/src/$category/$command.php";
                 } else {
                     echo "Comando não encontrado.";
                 }
                 break;
         }
-
-
         break;
 }
