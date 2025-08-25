@@ -1,6 +1,6 @@
 {
     "name": "silvaleal/karbom",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Um código feito em php para ajudar os programadores que irão utilizar PDO em suas aplicações. Atenção, este projeto não é um ORM, e sim apenas um atalho para mexer em um banco de dados, é usado SQL puro em nosso projeto.",
     "type": "library",
     "license": "MIT",
