@@ -1,14 +1,17 @@
 <?php
 
-require __DIR__ . "/../../../app/Database.php";
+namespace Karbom\Cli\Db;
 
-class Config
+use Karbom\Database;
+use Karbom\Rules;
+
+class Load
 {
     private $rules;
 
     public function __construct()
     {
-        $rules = require __DIR__ . "/../../rules.php";
+        $rules = Rules::get();
         $this->rules = $rules['mysql'];
     }
 
@@ -16,19 +19,15 @@ class Config
     {
         echo "\n\033[92mConfigurando...\033[39m\n";
 
-        $pdo = new Database(
-            $this->rules['dbHost'],
-            $this->rules['dbUser'],
-            $this->rules['dbPassword'],
-            $this->rules['dbName']
-        );
+        $pdo = new Database();
         $pdo = $pdo->connect();
-        $migrations = scandir(__DIR__ . "/../../../app/Migrations");
+
+        $migrations = scandir(getcwd() . $_ENV['KARBOM_MIGRATIONS']);
 
         foreach ($migrations as $file) {
             if (str_contains($file, ".php")) {
                 echo "\033[90mCarregando: $file\n\033[39m";
-                $fileContent = require __DIR__ . "/../../../app/Migrations/" . $file;
+                $fileContent = require getcwd() . $_ENV['KARBOM_MIGRATIONS'] . $file;
 
                 foreach ($fileContent as $content) {
                     $stmt = $pdo->prepare($content);
@@ -41,5 +40,5 @@ class Config
     }
 }
 
-$config = new Config();
-$config->up();
+// $config = new Config();
+// $config->up();

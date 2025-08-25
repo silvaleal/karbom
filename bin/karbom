@@ -1,8 +1,15 @@
 <?php
 
-# https://github.com/silvaleal/php-cli
+require __DIR__ . "/../vendor/autoload.php";
 
-$cmds = require __DIR__ . "/cli/src/list-commands.php";
+use Dotenv\Dotenv;
+use Karbom\Cli\Commands;
+
+$dotenv = Dotenv::createImmutable(getcwd());
+$dotenv->load();
+
+$cmds = Commands::list();
+
 switch (count($argv)) {
     case 1:
         echo "\n";
@@ -31,10 +38,15 @@ switch (count($argv)) {
             default:
                 $category = $exploreArgs[0];
                 $command = $exploreArgs[1];
-                $filePath = __DIR__ . "/cli/src/$category/$command.php";
+                $filePath = __DIR__ . "/../src/cli/$category/$command.php";
 
+                $command = ucfirst($command);
+                $category = ucfirst($category);
+                
                 if (file_exists($filePath)) {
-                    $result = require __DIR__ . "/cli/src/$category/$command.php";
+                    $commandClass = "Karbom\\Cli\\$category\\$command";
+                    $instance = new $commandClass();
+                    $instance->up();
                 } else {
                     echo "Comando não encontrado.";
                 }

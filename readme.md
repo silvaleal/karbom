@@ -17,10 +17,15 @@ Antes de usar o terminal para configurar o meu banco de dados (método usado no 
 
 ## Instalação
 ```bash
-# Passo 1.
-    git clone https://github.com/silvaleal/php-cli-pdo
-    # Pegue a pasta que você instalou e jogue o que está dentro dela na raiz do seu projeto.
 
-# Passo 2.
-    # Acesse a pasta "cli" e vá em rules.php, coloque a conexão com seu banco de dados e o caminho que deseja para as migrations
+# X passo, configure seu .env
+
+# Padrão de uso do Karbom
+DATABASE_HOST="localhost"
+DATABASE_USER="root"
+DATABASE_PASSWORD=""
+DATABASE_NAME="karbomTest"
+
+KARBOM_MIGRATIONS="/sql/Migrations/"
+
 ```

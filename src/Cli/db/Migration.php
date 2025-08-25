@@ -1,5 +1,10 @@
 <?php
 
+
+namespace Karbom\Cli\Db;
+
+use Karbom\Rules;
+
 class Migration
 {
     private $args;
@@ -7,9 +12,9 @@ class Migration
     private $content;
 
 
-    public function __construct($args) {
-        $this->args = $args;
-        $this->rules = require __DIR__ . "/../../rules.php";
+    public function __construct() {
+        $this->args = $_SERVER['argv'];
+        $this->rules = Rules::get();
         $this->content =  require __DIR__ . "/../base/migrations.php";
     }
 
@@ -17,9 +22,9 @@ class Migration
     {
         $argName = $this->args[2];
         $path = $this->rules['paths']['migrations'];
-        $name = "$path/$argName.php";
+        $name = "$path/{$this->args[2]}.php";
 
-        $this->content = str_replace("%name%", $argName, $this->content);
+        $this->content = str_replace("%name%",  $this->args[2], $this->content);
 
         if (!file_exists($name)) {
             $file = fopen($name, 'w');
@@ -32,5 +37,5 @@ class Migration
     }
 }
 
-$migration = new Migration($argv);
-$migration->up();
+// $migration = new Migration($argv);
+// $migration->up();

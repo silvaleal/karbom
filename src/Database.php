@@ -1,5 +1,9 @@
 <?php
 
+namespace Karbom;
+
+use PDO;
+
 class Database
 {
     private $host;
@@ -8,12 +12,13 @@ class Database
     private $database;
     private $pdo;
 
-    public function __construct($host, $user, $password, $database)
-    {
-        $this->host = $host;
-        $this->user = $user;
-        $this->password = $password;
-        $this->database = $database;
+    public function __construct() {
+        $rules = Rules::get()['mysql'];
+        
+        $this->host = $rules['dbHost'];
+        $this->user = $rules['dbUser'];
+        $this->password = $rules['dbPassword'];
+        $this->database = $rules['dbName'];
     }
 
     public function prepare()
@@ -30,7 +35,8 @@ class Database
         return $this->pdo;
     }
 
-    public function connect() {
+    public function connect()
+    {  
         $this->prepare();
         return $this->pdo;
     }
