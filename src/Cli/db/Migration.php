@@ -12,10 +12,11 @@ class Migration
     private $content;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->args = $_SERVER['argv'];
         $this->rules = Rules::get();
-        $this->content =  require __DIR__ . "/../base/migrations.php";
+        $this->content = require __DIR__ . "/../base/migrations.php";
     }
 
     public function up()
@@ -27,6 +28,11 @@ class Migration
         $this->content = str_replace("%name%",  $this->args[2], $this->content);
 
         if (!file_exists($name)) {
+            if (!file_exists($path)) {
+                echo "\nPasta das migrations não encontradas.\nVerifique seu .env e corrija.\n ";
+                return;
+            }
+
             $file = fopen($name, 'w');
             fwrite($file, $this->content);
 
@@ -36,6 +42,3 @@ class Migration
         }
     }
 }
-
-// $migration = new Migration($argv);
-// $migration->up();
