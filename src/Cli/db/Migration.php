@@ -29,16 +29,16 @@ class Migration
 
         if (!file_exists($name)) {
             if (!file_exists($path)) {
-                echo "\nPasta das migrations não encontradas.\nVerifique seu .env e corrija.\n ";
+                echo "\nMigrations folder not found.\nCheck your .env and correct it.\n ";
                 return;
             }
 
             $file = fopen($name, 'w');
             fwrite($file, $this->content);
 
-            echo "\n\033[92mMigration criada com sucesso\n\033[39m\n";
+            echo "\n\033[92mMigration created successfully.\n\033[39m\n";
         } else {
-            echo "\n\033[92mJá existe um model com este nome.\n\033[39m\n";
+            echo "\n\033[92mA model with this name already exists.\n\033[39m\n";
         }
     }
 }

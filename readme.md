@@ -1,33 +1,32 @@
-# silvaleal-cli-pdo
+# Karbom
 
-Um código feito em php para ajudar os programadores que irão utilizar PDO em suas aplicações.
-Atenção, este projeto não é um ORM, e sim apenas um atalho para mexer em um banco de dados, é usado SQL puro em nosso projeto.
+A PHP code designed to help developers who want to use PDO in their applications.
+Note: this project is not an ORM, but just a shortcut to work with a database using raw SQL in our project.
 
-## Como usar?
-```bash
-php silvaleal # Liste os comandos
-php silvaleal <category> # Liste apenas os comandos de uma categoria
-php silvaleal db:migration <name> # Crie uma migration
-php silvaleal db:config # Configure o seu banco de dados
+## How to use?
+```shell
+php .\bin\karbom                      # List all commands
+php .\bin\karbom <category>           # List commands from a specific category
+php .\bin\karbom db:migration <name>  # Create a migration
+php .\bin\karbom db:load              # Configure your database
 ```
 
-## Por qual razão criei esse projeto?
+## Why did I create this project?
 
-Antes de usar o terminal para configurar o meu banco de dados (método usado no Laravel e CodeIgniter4), eu criava uma classe de Loader para configurar, e com isso, toda vez que o site era visitado ou sofria um refresh (F5), o meu banco era chamado, coisa que eu não recomendo.
+Before using the terminal to configure my database (a method used in Laravel and CodeIgniter4), I used to create a Loader class to handle it. With that approach, every time the site was visited or refreshed (F5), my database would be called—which I do not recommend.
 
-## Instalação
-```bash
-# Primeiro passo, configure seu .env
+## Installation
+```shell
+# Step 1: configure your .env
 composer require silvaleal/karbom
 
-# Segundo passo, configure seu .env
+# Step 2: configure your .env
 
-# Padrão de uso do Karbom
+# Karbom usage standard
 DATABASE_HOST="localhost"
 DATABASE_USER="root"
 DATABASE_PASSWORD=""
 DATABASE_NAME="karbomTest"
 
-KARBOM_MIGRATIONS="/sql/Migrations/" # Importante ser a "/" no começo e no fim
-
+KARBOM_MIGRATIONS="/sql/Migrations/"  # Important: must start and end with "/"
 ```

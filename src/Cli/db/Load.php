@@ -17,7 +17,7 @@ class Load
 
     public function up()
     {
-        echo "\n\033[92mConfigurando...\033[39m\n";
+        echo "\n\033[92mLoading...\033[39m\n";
 
         $pdo = new Database();
         $pdo = $pdo->connect();
@@ -26,7 +26,7 @@ class Load
 
         foreach ($migrations as $file) {
             if (str_contains($file, ".php")) {
-                echo "\033[90mCarregando: $file\n\033[39m";
+                echo "\033[90mTable: $file\n\033[39m";
                 $fileContent = require getcwd() . $_ENV['KARBOM_MIGRATIONS'] . $file;
 
                 foreach ($fileContent as $content) {
@@ -36,7 +36,7 @@ class Load
             }
         }
 
-        echo "\n\033[92mBanco de dados configurado\033[39m\n";
+        echo "\n\033[92mDatabase configured\033[39m\n";
     }
 }
 

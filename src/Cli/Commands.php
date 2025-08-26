@@ -8,8 +8,8 @@ class Commands
     {
         return [
             "db" => [
-                "db:load" => "Configure o seu banco de dados com um comando.",
-                "db:migration <name>" => "Crie um migration."
+                "db:load" => "Configure your database with a command.",
+                "db:migration <name>" => "Create a migration."
             ]
         ];
     }

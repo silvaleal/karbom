@@ -10,7 +10,7 @@ class Rules
 {
     private static $rules = [];
 
-    public static function build() # __construct(): não funciona quando uso a classe de forma estática.
+    public static function build()
     {
         self::$rules["mysql"] = [
             "dbHost" => $_ENV['DATABASE_HOST'] ?? 'localhost',
