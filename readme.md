@@ -17,8 +17,10 @@ Antes de usar o terminal para configurar o meu banco de dados (método usado no 
 
 ## Instalação
 ```bash
+# Primeiro passo, configure seu .env
+composer require silvaleal/karbom
 
-# X passo, configure seu .env
+# Segundo passo, configure seu .env
 
 # Padrão de uso do Karbom
 DATABASE_HOST="localhost"
@@ -26,6 +28,6 @@ DATABASE_USER="root"
 DATABASE_PASSWORD=""
 DATABASE_NAME="karbomTest"
 
-KARBOM_MIGRATIONS="/sql/Migrations/"
+KARBOM_MIGRATIONS="/sql/Migrations/" # Importante ser a "/" no começo e no fim
 
 ```
