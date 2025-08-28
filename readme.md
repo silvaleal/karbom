@@ -17,7 +17,7 @@ Before using the terminal to configure my database (a method used in Laravel and
 
 ## Installation
 ```shell
-# Step 1: configure your .env
+# Step 1: install in your project
 composer require silvaleal/karbom
 
 # Step 2: configure your .env
