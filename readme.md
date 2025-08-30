@@ -1,11 +1,8 @@
 # Karbom
+[Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki](https://github.com/silvaleal/karbom/wiki)
 
 Uma biblioteca PHP projetada para ajudar desenvolvedores que querem usar PDO em suas aplicações.
 **Nota**: este projeto não é um ORM, mas apenas um atalho para criar tabelas usando PDO puro.
-
-## Por que eu criei este projeto?
-
-Antes de usar o terminal para configurar meu banco de dados (um método usado no Laravel e CodeIgniter4), eu costumava criar uma classe Loader para gerenciá-lo. Com essa abordagem, toda vez que o site era acessado ou recarregado (F5), meu banco de dados era chamado, o que eu não recomendo.
 
 ## Como usar?
 
@@ -24,7 +21,6 @@ composer require silvaleal/karbom
 
 # Passo 2: configure seu arquivo .env
 
-# Padrão de uso do Karbom
 DATABASE_HOST="localhost"
 DATABASE_USER="root"
 DATABASE_PASSWORD=""
@@ -32,3 +28,7 @@ DATABASE_NAME="karbomTest"
 
 KARBOM_MIGRATIONS="/sql/Migrations/"  # Importante: deve começar e terminar com "/"
 ```
+
+## Dependências
+- PHP 8.1+
+- vlucas/phpdotenv
