@@ -28,6 +28,7 @@ DATABASE_PASSWORD=""
 DATABASE_NAME="karbomTest"
 
 KARBOM_MIGRATIONS="/sql/Migrations/"  # Important: must start and end with "/"
+KARBOM_SEEDERS="/sql/Seeders/"        # Important: must start and end with "/"
 ```
 
 ## Dependencies
