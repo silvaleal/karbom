@@ -1,34 +1,38 @@
 # Karbom
-[Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki (pt_BR)](https://github.com/silvaleal/karbom/wiki/Portuguese) | [Wiki (EN)](https://github.com/silvaleal/karbom/wiki/English)
 
-Uma biblioteca PHP projetada para ajudar desenvolvedores que querem usar PDO em suas aplicações.
-**Nota**: este projeto não é um ORM, mas apenas um atalho para criar tabelas usando PDO puro.
+[Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki (pt\_BR)](https://github.com/silvaleal/karbom/wiki/Portuguese) | [Wiki (EN)](https://github.com/silvaleal/karbom/wiki/English)
 
-## Como usar?
+A PHP library designed to help developers who want to use **PDO** in their applications.
+**Note**: this project is **not an ORM**, but simply a shortcut for creating tables using plain PDO.
+
+## How to use?
 
 ```shell
-php .\bin\karbom                      # Lista todos os comandos
-php .\bin\karbom <categoria>           # Lista os comandos de uma categoria específica
-php .\bin\karbom db:migration <nome>   # Cria uma migração
-php .\bin\karbom db:load               # Configura o seu banco de dados
+php .\bin\karbom                      # Lists all commands
+php .\bin\karbom <category>           # Lists commands from a specific category
+php .\bin\karbom db:migration <name>  # Creates a migration
+php .\bin\karbom db:load              # Sets up your database
 ```
 
-## Instalação
+## Installation
 
 ```shell
-# Passo 1: instale no seu projeto
+# Step 1: install in your project
 composer require silvaleal/karbom
 
-# Passo 2: configure seu arquivo .env
+# Step 2: configure your .env file
 
 DATABASE_HOST="localhost"
 DATABASE_USER="root"
 DATABASE_PASSWORD=""
 DATABASE_NAME="karbomTest"
 
-KARBOM_MIGRATIONS="/sql/Migrations/"  # Importante: deve começar e terminar com "/"
+KARBOM_MIGRATIONS="/sql/Migrations/"  # Important: must start and end with "/"
 ```
 
-## Dependências
-- PHP 8.1+
-- vlucas/phpdotenv
+## Dependencies
+
+* PHP 8.2+
+* vlucas/phpdotenv
+
+Quer que eu adapte esse texto para ficar mais no **estilo das libs famosas do GitHub**, com seções tipo *Features*, *Contributing* e *License*?
