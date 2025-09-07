@@ -34,5 +34,3 @@ KARBOM_MIGRATIONS="/sql/Migrations/"  # Important: must start and end with "/"
 
 * PHP 8.2+
 * vlucas/phpdotenv
-
-Quer que eu adapte esse texto para ficar mais no **estilo das libs famosas do GitHub**, com seções tipo *Features*, *Contributing* e *License*?
