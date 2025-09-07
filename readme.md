@@ -1,5 +1,5 @@
 # Karbom
-[Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki](https://github.com/silvaleal/karbom/wiki)
+[Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki (pt_BR)](https://github.com/silvaleal/karbom/wiki/Portuguese) | [Wiki (EN)](https://github.com/silvaleal/karbom/wiki/English)
 
 Uma biblioteca PHP projetada para ajudar desenvolvedores que querem usar PDO em suas aplicações.
 **Nota**: este projeto não é um ORM, mas apenas um atalho para criar tabelas usando PDO puro.
