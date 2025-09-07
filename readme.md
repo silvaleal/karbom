@@ -11,7 +11,9 @@ A PHP library designed to help developers who want to use **PDO** in their appli
 php .\vendor\bin\karbom                      # Lists all commands
 php .\vendor\bin\karbom <category>           # Lists commands from a specific category
 php .\vendor\bin\karbom db:migration <name>  # Creates a migration
+php .\vendor\bin\karbom db:seeder            # Creates a seeder
 php .\vendor\bin\karbom db:load              # Sets up your database
+php .\vendor\bin\karbom db:seed              # Carregue seus seeders
 ```
 
 ## Installation
