@@ -2,8 +2,7 @@
 
 [Packagist](https://packagist.org/packages/silvaleal/karbom) | [Wiki (pt\_BR)](https://github.com/silvaleal/karbom/wiki/Portuguese) | [Wiki (EN)](https://github.com/silvaleal/karbom/wiki/English) | [Base Project (Example)](https://github.com/silvaleal/karbom-base-project)
 
-A PHP library designed to help developers who want to use **PDO** in their applications.
-**Note**: this project is **not an ORM**, but simply a shortcut for creating tables using plain PDO.
+A PHP library designed to help developers who want to use **MySQL** in their applications. **Note**: this project **is not an ORM**.
 
 ## How to use?
 
