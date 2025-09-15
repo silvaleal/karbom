@@ -12,7 +12,7 @@ php .\vendor\bin\karbom <category>           # Lists commands from a specific ca
 php .\vendor\bin\karbom db:migration <name>  # Creates a migration
 php .\vendor\bin\karbom db:seeder            # Creates a seeder
 php .\vendor\bin\karbom db:load              # Sets up your database
-php .\vendor\bin\karbom db:seed              # Carregue seus seeders
+php .\vendor\bin\karbom db:seed              # Load a seeders
 ```
 
 ## Installation
